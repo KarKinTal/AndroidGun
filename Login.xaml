@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AndroidGun.Login"
+             Title="Login">
+    <VerticalStackLayout>
+        <Label 
+            Text="ANDROID"
+            FontFamily="Inria-Sans"
+            FontSize="40"
+            FontAttributes="Bold"
+            TextColor="#512BD4"
+            Margin="0, 70, 0, 0"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        <Label
+            Text="GUN"
+            FontSize="100"
+            FontFamily="Inria-Sans"
+            FontAttributes="Bold"
+            TextColor="#512BD4"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"/>
+        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" Margin="40, 0, 40, 0">
+            <Frame 
+                BackgroundColor="LightGray" 
+                BorderColor="Transparent" 
+                Padding="10" 
+                Margin="0, 20, 0, 0"
+                HorizontalOptions="FillAndExpand" 
+                CornerRadius="40">
+                <Entry 
+                    Text="{Binding UserName}" 
+                    Placeholder="Login" 
+                    TextColor="#404040" 
+                    FontAttributes="Bold" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="FillAndExpand"/>
+            </Frame>
+            <Frame 
+                BackgroundColor="LightGray" 
+                BorderColor="Transparent" 
+                Padding="10" 
+                Margin="0, 20, 0, 0"
+                HorizontalOptions="FillAndExpand" 
+                CornerRadius="40">
+                <Entry 
+                    Text="{Binding Password}" 
+                    Placeholder="Hasło" 
+                    TextColor="#404040" 
+                    FontAttributes="Bold" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="FillAndExpand"/>
+            </Frame>
+            <StackLayout Orientation="Horizontal" Margin="0, 10, 0, 0" Padding="0">
+                <CheckBox IsChecked="False"/>
+                <Label
+                Text="Nie wylogowywuj mnie"
+                TextColor="DarkGray"
+                FontSize="Small"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"/>
+                <Label
+                Text="Zapomniałem hasła"
+                TextColor="#ac99ea"
+                FontAttributes="Bold"
+                HorizontalOptions="EndAndExpand"
+                VerticalTextAlignment="Center"
+                HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </StackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>
