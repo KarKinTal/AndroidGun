@@ -1,4 +1,5 @@
 ﻿using Camera.MAUI;
+using ZXing;
 using ZXing.Net.Maui;
 
 namespace MauiApp2{
@@ -7,28 +8,26 @@ namespace MauiApp2{
         public MainPage()
         {
             InitializeComponent();
-        }
-
-        private void cameraView_CamerasLoaded(object sender, EventArgs e)
-        {
-            if (cameraView.Cameras.Count > 0)
+            barcodeReader.Options = new ZXing.Net.Maui.BarcodeReaderOptions
             {
-                cameraView.Camera = cameraView.Cameras.First();
-                MainThread.BeginInvokeOnMainThread(async () =>
-                {
-                    await cameraView.StopCameraAsync();
-                    await cameraView.StartCameraAsync();
-                });
-            }
+                Formats = ZXing.Net.Maui.BarcodeFormat.Code128,
+                AutoRotate = true,
+                Multiple = true
+            };
+            
         }
-
-        private void cameraView_BarcodeDetected(object sender, Camera.MAUI.ZXingHelper.BarcodeEventArgs args)
+        private void barcodeReader_BarcodesDetected(object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
         {
-            MainThread.BeginInvokeOnMainThread(() =>
+            var first = e.Results?.FirstOrDefault();
+
+            if (first is null)
+                return;
+
+            Dispatcher.DispatchAsync(async () =>
             {
-                barcodeResult.Text = $"{args.Result[0].BarcodeFormat}: {args.Result[0].Text}";
-          
+                await DisplayAlert("Barcode Detected", first.Value, "OK");
             });
         }
+        
     }
 }
