@@ -28,6 +28,8 @@ namespace MauiApp2{
                 await DisplayAlert("Barcode Detected", first.Value, "OK");
             });
         }
+
+       
         
     }
 }
