@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
-using Camera.MAUI;
 using ZXing.Net.Maui.Controls;
-namespace MauiApp2
+
+namespace AndroidGunFinal
 {
     public static class MauiProgram
     {
@@ -17,8 +17,16 @@ namespace MauiApp2
                 })
                 .UseBarcodeReader();
 
+            builder.Services.AddTransient<MainPage>();
+
+            builder.Services.AddTransient<Wydanie>();
+
+            builder.Services.AddTransient<EtykietaInfo>();
+
+            builder.Services.AddTransient<Menu>();
+
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
 
             return builder.Build();

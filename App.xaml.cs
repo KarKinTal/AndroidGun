@@ -1,4 +1,4 @@
-﻿namespace MauiApp2
+﻿namespace AndroidGunFinal
 {
     public partial class App : Application
     {

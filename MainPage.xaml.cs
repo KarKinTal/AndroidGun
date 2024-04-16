@@ -1,8 +1,9 @@
-﻿using Camera.MAUI;
-using ZXing;
+﻿using ZXing.Net.Maui.Controls;
 using ZXing.Net.Maui;
+using ZXing.Net.Maui.Readers;
 
-namespace MauiApp2{
+namespace AndroidGunFinal
+{
     public partial class MainPage : ContentPage
     {
         public MainPage()
@@ -14,22 +15,18 @@ namespace MauiApp2{
                 AutoRotate = true,
                 Multiple = true
             };
-            
+            barcodeReader.CameraLocation = ZXing.Net.Maui.CameraLocation.Rear;
         }
-        private void barcodeReader_BarcodesDetected(object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
+        private void barcodeReader_BarcodeDetected(object sender, ZXing.Net.Maui.BarcodeDetectionEventArgs e)
         {
             var first = e.Results?.FirstOrDefault();
-
-            if (first is null)
-                return;
-
-            Dispatcher.DispatchAsync(async () =>
-            {
-                await DisplayAlert("Barcode Detected", first.Value, "OK");
+            if (first != null) { return; }
+            Dispatcher.DispatchAsync(async () => {
+            await DisplayAlert("Barcode detected", first.Value, "Ok");
             });
         }
 
-       
-        
+
     }
+
 }
