@@ -21,6 +21,9 @@
     <MauiXaml Update="EtykietaInfo.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Login.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Menu.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>

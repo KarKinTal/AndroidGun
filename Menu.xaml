@@ -4,12 +4,18 @@
              x:Class="AndroidGunFinal.Menu"
              Title="Menu">
 
-    <Grid RowDefinitions="100,100" ColumnDefinitions="*,*" ColumnSpacing="5" RowSpacing="5">
-        <Button Grid.Row =" 0 " Padding="10" Text="Przyjęcie" Clicked="GoToPrzyjecie"
-                BackgroundColor="#3F3C5F" TextColor="White" FontAttributes="Bold"/>
+    <Grid RowDefinitions="160,160" ColumnDefinitions="*,*" ColumnSpacing="5" RowSpacing="5">
+        <Button Grid.Row =" 0 " Padding="10" Text="Przyjęcie" FontSize="18" Clicked="GoToPrzyjecie"
+                BackgroundColor="#3F3C5F" TextColor="White" FontAttributes="Bold"
+                ImageSource="przyjecie.svg" ContentLayout="Top, -20" CornerRadius="20" 
+                />
         <Button Grid.Row =" 0 " Grid.Column="1"  Text="Wydanie" Clicked="GoToWydanie"
-                BackgroundColor="#3F3C5F" TextColor="White" FontAttributes="Bold"/>
-        <Button Grid.Row =" 1 " Text="Info"  Clicked="GoToInfo"
-                BackgroundColor="#3F3C5F" TextColor="White" FontAttributes="Bold"/>
+                BackgroundColor="#3F3C5F" TextColor="White" FontSize="17" FontAttributes="Bold"
+                ImageSource="wydanie.svg" ContentLayout="Top, -20" CornerRadius="20"
+                />
+        <Button Grid.Row =" 1 " Text="Info"  FontSize="17" Clicked="GoToInfo"
+                BackgroundColor="#3F3C5F" TextColor="White" FontAttributes="Bold"
+                ImageSource="etykieta.svg" ContentLayout="Top, -20" CornerRadius="20"
+                />
     </Grid>
 </ContentPage>
