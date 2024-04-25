@@ -10,6 +10,18 @@
         <ToolbarItem Text="Menu" Clicked="GoToMenu" />
     </Shell.ToolbarItems>
 
+    <ShellContent
+        Title="Loading"
+        ContentTemplate="{DataTemplate local:Loading}"
+        Route="MainPage"
+        Shell.FlyoutItemIsVisible="False"/>
+    
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate local:Login}"
+        Route="MainPage"
+        Shell.FlyoutBehavior="Disabled"
+        Shell.FlyoutItemIsVisible="False"/>
 
     <FlyoutItem>
         <ShellContent

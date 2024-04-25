@@ -6,8 +6,8 @@ public partial class Login : ContentPage
 	{
 		InitializeComponent();
 	}
-    async void MoveToApp(System.Object sender, System.EventArgs e)
+    async void MoveToApp(Object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new MainPage(), true);
+        await Shell.Current.GoToAsync($"//{nameof(Wydanie)}");
     }
 }

@@ -7,6 +7,8 @@ namespace AndroidGunFinal
         public AppShell()
         {
             InitializeComponent();
+            Routing.RegisterRoute(nameof(Login), typeof(Login));
+            Routing.RegisterRoute(nameof(Loading), typeof(Loading));
             Routing.RegisterRoute(nameof(Wydanie), typeof(Wydanie));
         }
 

@@ -30,6 +30,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = AndroidGunFinal.EtykietaIn
 build_metadata.AdditionalFiles.TargetPath = EtykietaInfo.xaml
 build_metadata.AdditionalFiles.RelativePath = EtykietaInfo.xaml
 
+[C:/-RESZTA-/---/STUDIA/6/projekt_zespolowy/AndroidGunFinal/Loading.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = AndroidGunFinal.Loading.xaml
+build_metadata.AdditionalFiles.TargetPath = Loading.xaml
+build_metadata.AdditionalFiles.RelativePath = Loading.xaml
+
 [C:/-RESZTA-/---/STUDIA/6/projekt_zespolowy/AndroidGunFinal/Login.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = AndroidGunFinal.Login.xaml

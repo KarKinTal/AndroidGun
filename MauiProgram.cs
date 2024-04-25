@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AndroidGunFinal.Services;
+using Microsoft.Extensions.Logging;
 using ZXing.Net.Maui.Controls;
 
 namespace AndroidGunFinal
@@ -28,6 +29,11 @@ namespace AndroidGunFinal
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
+
+            builder.Services.AddTransient<LoginService>();
+
+            builder.Services.AddTransient<Login>();
+            builder.Services.AddTransient<Loading>();
 
             return builder.Build();
         }

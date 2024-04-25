@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AndroidGunFinal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+5eae05b35b8d0cb05a1a9f079771aaba8ed27f97")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+11151ffeefaa42eb52c83642e4a5c14bc7cd0ac4")]
 [assembly: System.Reflection.AssemblyProductAttribute("AndroidGunFinal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AndroidGunFinal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
