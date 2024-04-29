@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+//using CoreData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,10 +17,15 @@ namespace AndroidGunFinal.ViewModels
         [ObservableProperty]
         private string _password;
 
-        [RelayCommand]
-        public async void Login()
-        {
+        //readonly ILoginRepository loginRepository = new LoginService();
 
+        [RelayCommand]
+        public async void Log()
+        {
+            /*if (!string.IsNullOrWhiteSpace(UserName) && !string.IsNullOrWhiteSpace(Password))
+            {
+                UserInfo userInfo = await loginRepository.Login(UserName, Password);
+            }*/
         }
 
     }

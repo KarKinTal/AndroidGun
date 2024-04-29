@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AndroidGunFinal.Login"
              Title="Login"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             >
     <VerticalStackLayout>
         <Label 
         Text="ANDROID"
@@ -33,7 +34,7 @@
                 <Entry 
                 Text="{Binding UserName}" 
                 Placeholder="Login" 
-                TextColor="#404040" 
+                TextColor="white" 
                 FontAttributes="Bold" 
                 VerticalOptions="Center" 
                 HorizontalOptions="FillAndExpand"/>
@@ -48,7 +49,7 @@
                 <Entry 
                 Text="{Binding Password}" 
                 Placeholder="Hasło" 
-                TextColor="#404040" 
+                TextColor="white" 
                 FontAttributes="Bold" 
                 VerticalOptions="Center" 
                 HorizontalOptions="FillAndExpand"

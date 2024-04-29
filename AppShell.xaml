@@ -14,14 +14,16 @@
         Title="Loading"
         ContentTemplate="{DataTemplate local:Loading}"
         Route="MainPage"
-        Shell.FlyoutItemIsVisible="False"/>
+        Shell.FlyoutItemIsVisible="False"
+        />
     
     <ShellContent
         Title="Login"
         ContentTemplate="{DataTemplate local:Login}"
         Route="MainPage"
         Shell.FlyoutBehavior="Disabled"
-        Shell.FlyoutItemIsVisible="False"/>
+        Shell.FlyoutItemIsVisible="False"
+        NavigationPage.HasNavigationBar="False"/>
 
     <FlyoutItem>
         <ShellContent

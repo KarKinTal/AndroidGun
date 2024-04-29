@@ -6,9 +6,54 @@
              xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
             >
 
-    <zxing:CameraBarcodeReaderView
-       x:Name="barcodeReader"
-       BarcodesDetected="barcodeReader_BarcodeDetected"
-       />
+    <VerticalStackLayout>
+        <Grid RowDefinitions="50, 50, 50, 50, 50, *" ColumnDefinitions="100,*" ColumnSpacing="2" RowSpacing="5" Padding="20, 10, 20, 10">
+            <Label Grid.Row="0" Text="Magazyn:" Padding="15"/>
+            <Frame Grid.Row="0" Grid.Column="1" 
+                   BackgroundColor="Transparent" BorderColor="#442178" 
+                   Margin="0, 5, 0, 0" CornerRadius="25"
+                   HorizontalOptions="FillAndExpand">
+                <Picker Margin="0, -15, 0, -17"/>
+            </Frame>
+            <Label Grid.Row="1" Text="Sektor:" Padding="15"/>
+            <Frame Grid.Row="1" Grid.Column="1"  
+                   BackgroundColor="Transparent" BorderColor="#442178" 
+                   CornerRadius="25" Margin="0, 5, 0, 0">
+                <Picker Margin="0, -15, 0, -17"/>
+            </Frame>
+            <Label Grid.Row="2" Text="Uwagi:" Padding="15"/>
+            <Frame Grid.Row="2" Grid.Column="1"
+                   BackgroundColor="Transparent" BorderColor="#442178" 
+                   CornerRadius="40" Margin="0, 5, 0, 0" 
+                   HorizontalOptions="FillAndExpand" >
+                   <Entry 
+                        Text="{Binding Code}" 
+                        Placeholder="Brak" 
+                        TextColor="white" 
+                        FontAttributes="Bold" 
+                        VerticalOptions="Center" 
+                        HorizontalOptions="FillAndExpand"
+                        Margin="0, -15, 0, -17"/>
+            </Frame>
+            <Label Grid.Row="3" Grid.ColumnSpan="2" Padding="15"
+                   Text="Wpisz kod etykiety lub ją zeskanuj:"/>
+            <Button Grid.Row="4" Text="Zatwierdź" CornerRadius="25" TextColor="White" BackgroundColor="#442178"/>
+            <Frame Grid.Row="4" Grid.Column="1"  
+                   BorderColor="#442178" BackgroundColor="Transparent" 
+                   CornerRadius="30" Margin="10, 0, 0, 0" 
+                   HorizontalOptions="FillAndExpand">
+                <Entry Text="{Binding Code}" Placeholder="Kod etykiety"
+                       Margin="00, -15, 0, -15" BackgroundColor="Transparent" TextColor="White"/>
+            </Frame>
+            
+            <zxing:CameraBarcodeReaderView Grid.Row="5" Grid.ColumnSpan="2"
+                    Margin="10, 50, 0, 200"
+                    x:Name="barcodeReader"
+                    BarcodesDetected="barcodeReader_BarcodeDetected"
+                    />
+        </Grid>
+
+    </VerticalStackLayout>
+    
     
 </ContentPage>
