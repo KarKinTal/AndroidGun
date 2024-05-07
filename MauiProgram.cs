@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AndroidGunFinal.Models;
+using Microsoft.Extensions.Logging;
 using ZXing.Net.Maui.Controls;
 
 namespace AndroidGunFinal
@@ -18,12 +19,14 @@ namespace AndroidGunFinal
                 .UseBarcodeReader();
 
             builder.Services.AddTransient<MainPage>();
-
+            builder.Services.AddTransient<Login>();
             builder.Services.AddTransient<Wydanie>();
 
             builder.Services.AddTransient<EtykietaInfo>();
+            builder.Services.AddTransient<LoginViewModel>();
 
             builder.Services.AddTransient<Menu>();
+            
 
 #if DEBUG
             builder.Logging.AddDebug();
