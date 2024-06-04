@@ -4,37 +4,36 @@ using AndroidGunFinal.Services;
 using Newtonsoft.Json;
 namespace AndroidGunFinal;
 
+
 public partial class Login : ContentPage
 {
-    HttpClient client = new HttpClient();
-
-    public Login()
-	{
+    public Login() {
         InitializeComponent();
-        client.BaseAddress = new Uri("http://localhost:8080/");
     }
-
 
     public string DoLogin()
     {
+        HttpClient client = new HttpClient();
+        client.BaseAddress = new Uri("http://10.0.2.2:8080/");
+        var globalDict = ((App)Application.Current).GlobalDictionary;
         try
         {
-            var login = new LoginClass(PasswordTxtIn.Text, loginTxtIn.Text);
+            var login = new LoginClass("","");
             string jsonData = JsonConvert.SerializeObject(login);
             var content = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var response =  client.PostAsync("api/auth/login", content);
-            var jsonRespone =  response.Result;
+            var response =  client.PostAsync("api/auth/login", content).Result;
+            var jsonRespone =  response;
 
-            if (jsonRespone.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
-                PasswordTxtIn.Text = "test";
-                loginTxtIn.Text = "test";
+                var responseContent = response.Content.ReadAsStringAsync().Result;
+                dynamic responseData = JsonConvert.DeserializeObject(responseContent);
+                globalDict["userLogin"] = responseContent;
                 return jsonRespone.StatusCode.ToString();
             }
             else
             {
-                PasswordTxtIn.Text = "Błąd";
-                loginTxtIn.Text = "Błąd";
+               
                 return jsonRespone.StatusCode.ToString();
 
             }
@@ -47,9 +46,20 @@ public partial class Login : ContentPage
     }
     public async void MoveToApp(System.Object sender, System.EventArgs e)
     {
-        await Task.Run(DoLogin);
-        
-         Navigation.PushAsync(new MainPage());
+
+        var statusCode = await Task.Run(DoLogin);
+        if (statusCode == "OK") {
+            ZalogujBtn.Text = "Zalogowano pomyślnie";
+            await Navigation.PushAsync(new MainPage());
+
+        }
+        else
+        {
+            ZalogujBtn.Text = "Błąd Logowania";
+        }
+
+        SemanticScreenReader.Announce(ZalogujBtn.Text);
 
     }
+
 }

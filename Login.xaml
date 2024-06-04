@@ -4,7 +4,7 @@
              x:Class="AndroidGunFinal.Login"
              Title="Login"
              Shell.NavBarIsVisible="False">
-    
+
     <VerticalStackLayout>
         <Label 
         Text="ANDROID"
@@ -71,6 +71,7 @@
             </StackLayout>
 
             <Button
+            x:Name="ZalogujBtn"
             Text="Zaloguj"
             CornerRadius="40"
             Padding="10"

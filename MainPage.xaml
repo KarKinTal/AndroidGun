@@ -15,7 +15,7 @@
               >
 
             <Label   Grid.Row="0" Text="Magazyn" Padding="15"/>
-            
+
             <Frame Grid.Row="0" Grid.Column="1" 
                    BackgroundColor="Transparent" 
                    BorderColor="#442178" 
@@ -27,11 +27,11 @@
                        Text="" 
                        HorizontalOptions="Center"
                        VerticalOptions="Center"/>
-                
+
             </Frame>
-            
+
             <Label Grid.Row="1" Text="Sektor:" Padding="15"/>
-            
+
             <Frame Grid.Row="1" Grid.Column="1"  
                    BackgroundColor="Transparent" 
                    BorderColor="#442178" 
@@ -62,25 +62,29 @@
                        VerticalOptions="Center"/>
 
             </Frame>
-            
+
             <Label Grid.Row="3" Grid.ColumnSpan="2" 
                    Padding="15"
                    Text="Wpisz kod etykiety lub ją zeskanuj:"/>
-            
-            <Button Grid.Row="4" 
+
+            <Button 
+                    Grid.Row="4" 
                     Text="Zatwierdź" 
                     CornerRadius="25" 
                     TextColor="White" 
-                    BackgroundColor="#442178"/>
-            
+                    BackgroundColor="#442178"
+                    Clicked="search"/>
+
             <Frame Grid.Row="4" Grid.Column="1"  
                    BorderColor="#442178" 
                    BackgroundColor="Transparent" 
                    CornerRadius="30" 
                    Margin="10, 0, 0, 0" 
                    HorizontalOptions="FillAndExpand">
-                
-                <Entry Text="" 
+
+                <Entry
+                       x:Name="SearchFor"
+                       Text="" 
                        Placeholder="Kod etykiety"
                        Margin="0, -15, 0, -15" 
                        BackgroundColor="Transparent" 
